@@ -20,12 +20,12 @@ text-transform: uppercase;
 :root {
 /* 覆蓋 Bootstrap 預設主⾊ (--bs-primary-rgb) 的 RGB 數值
 */
-/* 範例⽰範：設定為⾼質感「深⼤海藍」 (RGB: 200, 150, 110)
+/* 範例⽰範：設定為⾼質感「紫」 (RGB: 190, 165, 235)
 */
---bs-primary-rgb: 25, 25, 112;
+--bs-primary-rgb: 190, 165, 235;
 /* (可選) 同步統⼀超連結與滑⿏懸停顏⾊ */
---bs-link-color: rgb(103, 14, 14);
---bs-link-hover-color: rgb(162, 131, 167);
+--bs-link-color: rgb(103, 12, 12);
+--bs-link-hover-color: rgb(203, 178, 199);
 }
 /* 同步修改社群圖⽰按鈕 Hover 時的背景⾊彩 */
 .social-icons .social-icon:hover {
@@ -37,9 +37,37 @@ background-color: rgb(201, 145, 188);
 /* 選取所有 .resume-section 履歷區塊 */
 .resume-section {
 /* 設定柔和的淡乳⽩⾊或淡⿈⾊背景 (RGB: 255, 248, 220) */
-background-color: rgb(251, 246, 230);
+background-color: rgb(230, 243, 246);
 /* (可選) 加⼊牆⾯/紙張紋理背景圖 (圖⽚路徑相對於 mystyles.
 css 檔案) */
 /* background-image: url('../assets/img/white-wall-3-2.
 png'); */
+}
+/* ===================================================
+4. Bento Grid 便當盒⾵格作品集樣式
+=================================================== */
+.bento-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1
+fr));
+gap: 20px;
+}
+.bento-item {
+background-color: #ffffff;
+border: 1px solid #e9ecef;
+border-radius: 12px;
+padding: 24px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+/* 滑⿏懸停時微升效果 */
+.bento-item:hover {
+transform: translateY(-4px);
+box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+}
+/* 桌機與平板螢幕下，讓⾸張主打作品跨越 2 欄 */
+@media (min-width: 768px) {
+.bento-wide {
+grid-column: span 2;
+}
 }
